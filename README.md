@@ -1,1 +1,0 @@
-# SAETA-NodeApp
