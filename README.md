@@ -15,5 +15,6 @@ Create build in JS
 
 Start the project
 >npm start
+
 Or
 >npm run dev
