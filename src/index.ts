@@ -1,5 +1,6 @@
 import express from "express";
 import 'dotenv/config'
+import Data from "./routes/index"
 
 
 const app = express();
@@ -7,7 +8,7 @@ const app = express();
 app.use(express.json());
 
 //Example route
-//app.use('/api', productsRouter)
+app.use('/Api', Data )
 
 //Error Returns
 app.use((req, res, next) => {
