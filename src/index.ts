@@ -1,10 +1,11 @@
 import express from "express";
 import 'dotenv/config'
 import Data from "./routes/index"
+import cors from "cors"
 
 
 const app = express();
-
+app.use(cors())
 app.use(express.json());
 
 //Example route
@@ -15,6 +16,8 @@ app.use((req, res, next) => {
     res.send({error:next})
 })
 
-app.listen(process.env.PORT || 3000, () => {
-    console.log('Listening on port ' + 3000)
+const PORT = process.env.PORT || 3000
+
+app.listen(PORT, () => {
+    console.log('Listening on port ' + PORT)
 })

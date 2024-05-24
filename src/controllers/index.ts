@@ -1,7 +1,11 @@
+import { ReturnRouteController } from './ReturnRouteController';
+import { GoingRouteController } from './GoingRouteController';
 import {RuotesController} from "./RoutesController";
-import { TripsController } from "./TripsController";
+import { RouteIDController } from "./RouteIDController";
 
 export {
     RuotesController,
-    TripsController
+    RouteIDController,
+    GoingRouteController,
+    ReturnRouteController
 }
