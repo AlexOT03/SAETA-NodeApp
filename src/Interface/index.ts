@@ -2,12 +2,17 @@ export interface Route {
     id: number;
     agency: string;
     agency_logo: string;
-    short_name: string;
+    short_name: number;
     long_name: string;
     vehicle_type: string;
     vehicle_img: string;
-    status: string;
+    status: boolean;
     color: string;
+    terminal_1: number;
+    terminal_2: number;
+    route_type:string;
+    Going:Trip[];
+    Return:Trip[]
   }
   
   export interface Stop {
@@ -16,20 +21,17 @@ export interface Route {
     road: string;
     logo: string;
     is_terminal: boolean;
-    type: string;
     altitude: number;
     latitude: number;
   }
   
   export interface Trip {
     id: number;
-    sense: string;
     address: string;
     stops: { stop: Stop }[];
   }
   
   export interface Data {
     routes: Route[];
-    trips: Trip[];
   }
   
