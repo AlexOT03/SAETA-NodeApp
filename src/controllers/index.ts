@@ -1,4 +1,4 @@
-import { getAllStopsController } from './GetAllStops';
+import { getAllGoingController, getAllReturnController } from './GetAllStops';
 import { ReturnRouteController } from './ReturnRouteController';
 import { GoingRouteController } from './GoingRouteController';
 import {RuotesController} from "./RoutesController";
@@ -9,5 +9,6 @@ export {
     RouteIDController,
     GoingRouteController,
     ReturnRouteController,
-    getAllStopsController
+    getAllGoingController,
+    getAllReturnController
 }
