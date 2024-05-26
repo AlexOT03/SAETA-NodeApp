@@ -24,3 +24,21 @@ export const ReturnRouteController=async(req:Request, res:Response, next:any)=> 
         next(error.message);
     }
 }
+
+export const ReturnsController=async(req:Request, res:Response, next:any)=> {
+    try {
+        const { routeID } = req.params; 
+        const route = data.routes.find((route: any) => route.id == routeID);
+
+        if (route) {
+            const returnStops = route.Return.flatMap(returnItem =>
+                returnItem.stops.map(stopItem => stopItem.stop)
+            );
+            res.json(returnStops)
+        } else {
+            res.status(404).json({ error: "Route not found" });
+        }
+    } catch (error: any) {
+        next(error.message);
+    }
+}

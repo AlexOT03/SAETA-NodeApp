@@ -26,3 +26,21 @@ export const GoingRouteController=async(req:Request, res:Response, next:any)=> {
 }
 
 
+export const GoingsController=async(req:Request, res:Response, next:any)=> {
+    try {
+        const { routeID } = req.params; 
+        const route = data.routes.find((route: any) => route.id == routeID);
+
+        if (route) {
+            const goingnStops = route.Going.flatMap(goingItem =>
+                goingItem.stops.map(stopItem => stopItem.stop)
+            );
+            res.json(goingnStops)
+        } else {
+            res.status(404).json({ error: "Route not found" });
+        }
+    } catch (error: any) {
+        next(error.message);
+    }
+}
+
