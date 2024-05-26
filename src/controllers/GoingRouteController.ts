@@ -24,3 +24,5 @@ export const GoingRouteController=async(req:Request, res:Response, next:any)=> {
         next(error.message);
     }
 }
+
+
